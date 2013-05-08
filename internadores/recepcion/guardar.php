@@ -10,6 +10,7 @@ $valores=array("nombreusuario"=>"'$nombreusuario'",
 			"codinstitucion"=>"'$codinstitucion'",
 			"cantidadreses"=>"'$cantidadreses'",
 			"placa"=>"'$placa'",
+			"fecharegistro"=>"'$fecharegistro'",
 			"procedencia"=>"'$procedencia'",
 			"observaciones"=>"'$observaciones'",
 			);

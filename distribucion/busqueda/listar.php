@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-$titulo="Listado de Recepciones";
+$titulo="Listado de Recepciones para FAENO";
 $folder="../../";
 include_once("../../funciones/funciones.php");
 include_once '../../class/institucion.php';
@@ -21,7 +21,7 @@ include_once "../../cabecerahtml.php";
                         <td><?php campos("Nombre Usuario","nombreusuario","text","",1);?></td>
 						<td><?php campos("Institución","codinstitucion","select",$inst);?></td>
                         <td><?php campos("Marca","marca","text","");?></td>
-                        <td><?php campos("Fecha Registro","fecharegistro","date","");?></td>
+                        <td><?php campos("Fecha Internación","fecharegistro","date",date("Y-m-d"));?></td>
                     </tr>
                     <tr>
                         <td><?php campos("Buscar","enviar","submit","");?></td>

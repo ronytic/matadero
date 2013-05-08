@@ -1,7 +1,7 @@
 <?php
 include_once '../../login/check.php';
 $folder="../../";
-$titulo="Nuevo Recepción";
+$titulo="Nuevo Recepción - Internación";
 include_once '../../funciones/funciones.php';
 include_once '../../cabecerahtml.php';
 //include_once '../../class/direccion.php';
@@ -26,11 +26,12 @@ $inst=todolista($institucion->mostrarTodo(),"codinstitucion","color,nombreinstit
                 <td colspan="2"><?php campos("Institución","codinstitucion","select",$inst);?></td>
             </tr>
             <tr>
-                <td><?php campos("Cantidad Reses","cantidadreses","number","",0,array("required"=>"required","size"=>30));?></td>
+                <td><?php campos("Cantidad Reses","cantidadreses","number","",0,array("required"=>"required","size"=>30,"min"=>0));?></td>
                 <td><?php campos("Placa","placa","text","",0,array("required"=>"required","size"=>30));?></td>
             </tr>
             <tr>
                 <td><?php campos("Procedencia","procedencia","text","",0,array("size"=>30));?></td>
+                <td><?php campos("Fecha Registro","fecharegistro","date","",0,array("size"=>30));?></td>
             </tr>
             <tr>
                 <td colspan="2"><?php campos("Observaciones","observaciones","textarea","","",array("rows"=>5,"cols"=>50,"size"=>30));?></td>

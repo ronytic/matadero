@@ -1,7 +1,7 @@
 <?php
 include_once '../../login/check.php';
 $folder="../../";
-$titulo="Modificar Recepción";
+$titulo="Modificar Recepción - Internación";
 $narchivo="recepcion";
 include_once("../../class/".$narchivo.".php");
 ${$narchivo}=new $narchivo;
@@ -33,11 +33,12 @@ include_once '../../cabecerahtml.php';
                 <td colspan="2"><?php campos("Institución","codinstitucion","select",$inst,0,"",$dat['codinstitucion']);?></td>
             </tr>
             <tr>
-                <td><?php campos("Cantidad Reses","cantidadreses","number",$dat['cantidadreses'],0,array("required"=>"required","size"=>30));?></td>
+                <td><?php campos("Cantidad Reses","cantidadreses","number",$dat['cantidadreses'],0,array("required"=>"required","size"=>30,"min"=>0));?></td>
                 <td><?php campos("Placa","placa","text",$dat['placa'],0,array("required"=>"required","size"=>30));?></td>
             </tr>
             <tr>
                 <td><?php campos("Procedencia","procedencia","text",$dat['procedencia'],0,array("size"=>30));?></td>
+                <td><?php campos("Fecha Registro","fecharegistro","date",$dat['fecharegistro'],0,array("size"=>30));?></td>
             </tr>
             <tr>
                 <td colspan="2"><?php campos("Observaciones","observaciones","textarea",$dat['observaciones'],"",array("rows"=>5,"cols"=>50,"size"=>30));?></td>
