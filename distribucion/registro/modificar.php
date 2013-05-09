@@ -1,8 +1,8 @@
 <?php
 include_once '../../login/check.php';
 $folder="../../";
-$titulo="Modificar dato de Faeno";
-$narchivo="faeno";
+$titulo="Modificar dato de Distribución";
+$narchivo="distribucion";
 include_once("../../class/".$narchivo.".php");
 include_once("../../class/recepcion.php");
 ${$narchivo}=new $narchivo;
@@ -50,7 +50,7 @@ include_once '../../cabecerahtml.php';
     </form>
 </fieldset>
 <fieldset>
-	<div class="titulo">Datos de Internación</div>
+	<div class="titulo">Datos de Distribución</div>
  	<form action="actualizar.php" method="post">
     <?php campos("","codfaeno","hidden",$cod)?>
    	<table class="tablareg">

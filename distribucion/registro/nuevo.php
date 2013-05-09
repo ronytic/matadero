@@ -1,7 +1,7 @@
 <?php
 include_once '../../login/check.php';
 $folder="../../";
-$titulo="Registro de Faeno";
+$titulo="Registro de Distribución";
 $narchivo="recepcion";
 include_once("../../class/".$narchivo.".php");
 ${$narchivo}=new $narchivo;
@@ -47,21 +47,26 @@ include_once '../../cabecerahtml.php';
     </form>
 </fieldset>
 <fieldset>
-	<div class="titulo">Datos de Internación</div>
+	<div class="titulo">Datos de Distribución</div>
  	<form action="guardar.php" method="post">
     <?php campos("","codrecepcion","hidden",$id)?>
    	<table class="tablareg">
     	<tr>
-        	<td><?php campos("Nro Orden Derribe","ordenderribe","text","",1,array("required"=>"required","size"=>30))?></td>
-            <td><?php campos("Cantidad Reses","cantidadreses","number",$dat['cantidadreses'],0,array("required"=>"required","size"=>30,"max"=>$dat['cantidadreses'],"min"=>"0"));?></td>
+        	<td><?php campos("Tipo de Vehiculo","tipovehiculo","text","",1,array("required"=>"required","size"=>30))?></td>
+            <td><?php campos("Nro Placa","numeroplaca","text","",0,array("required"=>"required","size"=>30))?></td>
         </tr>
         <tr>
-        	<td><?php campos("Fecha Faeno","fecharegistro","date",date("Y-m-d"),0,array("size"=>30,"max"=>date("Y-m-d")));?></td>
+        	<td><?php campos("Fecha Distribución","fechadistribucion","date",date("Y-m-d"),0,array("size"=>30,"max"=>date("Y-m-d")));?></td>
+            <td><?php campos("Nombre Responsable","nombreresponsable","text","",0,array("required"=>"required","size"=>30))?></td>
+        </tr>
+        <tr>
+        	<td><?php campos("Destino","destino","text","",0,array("required"=>"required","size"=>30))?></td>
+            <td><?php campos("Expedido en:","expedido","text","",0,array("required"=>"required","size"=>30))?></td>
         </tr>
         <tr>
                 <td colspan="2"><?php campos("Observaciones","observaciones","textarea","",0,array("rows"=>5,"cols"=>50,"size"=>30));?></td>
         </tr>
-		<tr><td><?php campos("Guardar Faeno","guardar","submit");?></td><td></td></tr> 
+		<tr><td><?php campos("Guardar Distribución","guardar","submit");?></td><td></td></tr> 
     </table>
     </form>   
 </fieldset>

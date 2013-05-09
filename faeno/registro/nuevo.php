@@ -47,7 +47,7 @@ include_once '../../cabecerahtml.php';
     </form>
 </fieldset>
 <fieldset>
-	<div class="titulo">Datos de Internación</div>
+	<div class="titulo">Datos de Faeno</div>
  	<form action="guardar.php" method="post">
     <?php campos("","codrecepcion","hidden",$id)?>
    	<table class="tablareg">

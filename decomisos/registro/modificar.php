@@ -1,15 +1,15 @@
 <?php
 include_once '../../login/check.php';
 $folder="../../";
-$titulo="Modificar dato de Faeno";
-$narchivo="faeno";
+$titulo="Modificar dato de Decomiso";
+$narchivo="decomisos";
 include_once("../../class/".$narchivo.".php");
 include_once("../../class/recepcion.php");
 ${$narchivo}=new $narchivo;
 $recepcion=new recepcion;
 $cod=$_GET['cod'];
-$fae=array_shift(${$narchivo}->mostrar($cod));
-$dat=array_shift($recepcion->mostrar($fae['codrecepcion']));
+$dec=array_shift(${$narchivo}->mostrar($cod));
+$dat=array_shift($recepcion->mostrar($dec['codrecepcion']));
 include_once '../../funciones/funciones.php';
 //include_once '../../class/direccion.php';
 include_once '../../class/institucion.php';
@@ -50,21 +50,19 @@ include_once '../../cabecerahtml.php';
     </form>
 </fieldset>
 <fieldset>
-	<div class="titulo">Datos de Internación</div>
+	<div class="titulo">Datos de Decomisos</div>
  	<form action="actualizar.php" method="post">
-    <?php campos("","codfaeno","hidden",$cod)?>
+    <?php campos("","coddecomisos","hidden",$cod)?>
    	<table class="tablareg">
     	<tr>
-        	<td><?php campos("Nro Orden Derribe","ordenderribe","text",$fae["ordenderribe"],1,array("required"=>"required","size"=>30))?></td>
-            <td><?php campos("Cantidad Reses","cantidadreses","number",$fae['cantidadreses'],0,array("required"=>"required","size"=>30,"max"=>$dat['cantidadreses'],"min"=>"0"));?></td>
+        	<td><?php campos("Fecha de Decomiso","fechadecomiso","date",$dec['fechadecomiso'],0,array("size"=>30,"max"=>date("Y-m-d")));?></td>
         </tr>
+        <tr><td colspan="2"><?php campos("Decomisos Antemortem","decomisosantemortem","textarea",$dec['decomisosantemortem'],0,array("rows"=>5,"cols"=>50,"size"=>30));?></td></tr>
+        <tr><td colspan="2"><?php campos("Decomisos Postmortem","decomisospostmortem","textarea",$dec['decomisospostmortem'],0,array("rows"=>5,"cols"=>50,"size"=>30));?></td></tr>
         <tr>
-        	<td><?php campos("Fecha Faeno","fecharegistro","date",$fae['fecharegistro'],0,array("size"=>30,"max"=>date("Y-m-d")));?></td>
+                <td colspan="2"><?php campos("Observaciones","observaciones","textarea",$dec['observaciones'],0,array("rows"=>5,"cols"=>50,"size"=>30));?></td>
         </tr>
-        <tr>
-                <td colspan="2"><?php campos("Observaciones","observaciones","textarea",$fae['observaciones'],0,array("rows"=>5,"cols"=>50,"size"=>30));?></td>
-        </tr>
-		<tr><td><?php campos("Guardar Faeno","guardar","submit");?></td><td></td></tr> 
+		<tr><td><?php campos("Guardar Decomiso","guardar","submit");?></td><td></td></tr> 
     </table>
     </form>   
 </fieldset>

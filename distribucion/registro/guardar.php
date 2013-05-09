@@ -1,14 +1,17 @@
 <?php
 include_once("../../login/check.php");
 if(!empty($_POST)):
-$narchivo="faeno";
+$narchivo="distribucion";
 include_once("../../class/".$narchivo.".php");
 ${$narchivo}=new $narchivo;
 extract($_POST);
 $valores=array(			"codrecepcion"=>"'$codrecepcion'",
-			"ordenderribe"=>"'$ordenderribe'",
-			"cantidadreses"=>"'$cantidadreses'",
-			"fecharegistro"=>"'$fecharegistro'",
+			"tipovehiculo"=>"'$tipovehiculo'",
+			"numeroplaca"=>"'$numeroplaca'",
+			"fechadistribucion"=>"'$fechadistribucion'",
+			"nombreresponsable"=>"'$nombreresponsable'",
+			"destino"=>"'$destino'",
+			"expedido"=>"'$expedido'",
 			"observaciones"=>"'$observaciones'",
 			);
 ${$narchivo}->insertar($valores);

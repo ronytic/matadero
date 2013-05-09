@@ -4,9 +4,9 @@ if (!empty($_POST)) {
 	$folder="../../";
 	$narchivo="recepcion";
 	include_once("../../class/".$narchivo.".php");
-	include_once("../../class/faeno.php");
+	include_once("../../class/decomisos.php");
 	${$narchivo}=new $narchivo;
-	$faeno=new faeno;
+	$decomisos=new decomisos;
 	extract($_POST);
 	$recep=${$narchivo}->mostrarTodo("nombreusuario LIKE '%$nombreusuario%' and marca LIKE '%$marca%' and codinstitucion LIKE '%$codinstitucion%'");
 //	$datos=${$narchivo}->mostrarTodoUnion("cliente c,categoria cat,direccion dir","c.*,cat.*,dir.*","c.paterno","c.nombres LIKE '%$nombres%' and c.paterno LIKE '%$paterno%' and c.materno LIKE '%$materno%' and c.ci LIKE '%$ci%' and c.coddireccion LIKE '%$coddireccion%' and c.codcategoria LIKE '%$codcategoria%' and c.codcategoria=cat.codcategoria and dir.coddireccion=c.coddireccion","c.");
@@ -14,15 +14,15 @@ if (!empty($_POST)) {
  
 	$recep=todolista($recep,"codrecepcion","codrecepcion");
 	$recep=implode(",",$recep);
-	foreach($faeno->mostrarTodo("codrecepcion IN ($recep) and fecharegistro LIKE '%$fecharegistro%'") as $fa){$i++;
-		$r=array_shift(${$narchivo}->mostrar($fa['codrecepcion']));
-		$datos[$i]['codfaeno']=$fa['codfaeno'];
+	foreach($decomisos->mostrarTodo("codrecepcion IN ($recep) and fechadecomiso LIKE '%$fecharegistro%'") as $dec){$i++;
+		$r=array_shift(${$narchivo}->mostrar($dec['codrecepcion']));
+		$datos[$i]['codfaeno']=$dec['coddecomisos'];
 		$datos[$i]['nombreusuario']=$r['nombreusuario'];
-		$datos[$i]['ordenderribe']=$fa['ordenderribe'];
-		$datos[$i]['cantidadreses']=$fa['cantidadreses'];
-		$datos[$i]['fecharegistro']=$fa['fecharegistro'];
+		$datos[$i]['decomisosantemortem']=$dec['decomisosantemortem'];
+		$datos[$i]['decomisospostmortem']=$dec['decomisospostmortem'];
+		$datos[$i]['fechadecomiso']=$dec['fechadecomiso'];
 	}
-	$titulo=array("nombreusuario"=>"Nombre Usuario","ordenderribe"=>"Orden Derribe","cantidadreses"=>"Cantidad Redes","fecharegistro"=>"Fecha de Faeno");
+	$titulo=array("nombreusuario"=>"Nombre Usuario","decomisosantemortem"=>"Decomisos AnteMortem","decomisospostmortem"=>"Decomisos PostMortem","fechadecomiso"=>"Fecha Decomisos");
 	listadoTabla($titulo,$datos,1,"modificar.php","eliminar.php","ver.php");
 }
 ?>
