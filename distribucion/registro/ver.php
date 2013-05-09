@@ -3,17 +3,17 @@ include_once("../../fpdf/fpdf.php");
 $narchivo="recepcion";
 include_once("../../config.php");
 include_once("../../class/".$narchivo.".php");
-include_once("../../class/faeno.php");
+include_once("../../class/distribucion.php");
 include_once("../../class/institucion.php");
 //$direccion=new direccion;
 $institucion=new institucion;
-$faeno=new faeno;
+$distribucion=new distribucion;
 ${$narchivo}=new $narchivo;
 extract($_GET);
 
-$fa=array_shift($faeno->mostrar($cod));
+$dis=array_shift($distribucion->mostrar($cod));
 	
-$dato=array_shift(${$narchivo}->mostrar($fa['codfaeno']));
+$dato=array_shift(${$narchivo}->mostrar($dis['codrecepcion']));
 //$dir=array_shift($direccion->mostrar($dato['coddireccion']));
 $inst=array_shift($institucion->mostrar($dato['codinstitucion']));
 
@@ -24,7 +24,7 @@ $pdf->Image("../../imagenes/logo.png",10,10,30,30);
 $pdf->SetXY(50,15);
 $pdf->Cell(150,10,utf8_decode(utf8_decode($lema)),0,5,"C");
 $pdf->SetFont("arial","UB",12);
-$pdf->Cell(150,10,utf8_decode("Datos de Registro de Faeno"),0,0,"C");
+$pdf->Cell(150,10,utf8_decode("Datos de Registro de Distribución"),0,0,"C");
 $pdf->Ln(15);
 $pdf->Cell(190,0,"",1,10,"C");
 $pdf->Ln(5);
@@ -36,16 +36,19 @@ mostrarI(array("Nombres Usuario"=>$dato['nombreusuario'],
 				"Procedencia"=>$dato['procedencia'],
 				"Observaciones"=>"",
 			));
-$pdf->MultiCell(190,5,$dato['observaciones']);	
+$pdf->MultiCell(190,5,utf8_decode($dato['observaciones']));	
 $pdf->Ln(5);$pdf->Ln(5);
 $pdf->Cell(190,0,"",1,10,"C");
-mostrarI(array("Orden de Derribe"=>$fa['ordenderribe'],
-				"Cantidad de Reses"=>$fa['cantidadreses'],
-				"Fecha de Faeno"=>$fa['fecharegistro'],
-				"Observaciones"=>""
+mostrarI(array("Tipo de Vehiculo"=>$dis['tipovehiculo'],
+				"Numero Placa"=>$dis['numeroplaca'],
+				"Fecha Distribución"=>fecha2Str($dis['fechadistribucion']),
+				"Nombre Responsable"=>$dis['nombreresponsable'],
+				"Destino"=>$dis['destino'],
+				"Expedido"=>$dis['expedido'],
+				"Observaciones"=>"",
 			));
 
-$pdf->MultiCell(190,5,$fa['observaciones']);	
+$pdf->MultiCell(190,5,utf8_decode($dis['observaciones']));	
 		
 $pdf->Output();
 ?>

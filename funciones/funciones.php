@@ -65,6 +65,7 @@ function listadotabla($titulo,$datos,$enlaces=0,$modifica="",$elimina="",$ver=""
 	<?php
 }
 function todolista($datos,$k,$v,$separador=" "){
+//	print_r($datos);
 	$data=array();
 	foreach($datos as $d){
 		$valor="";
@@ -318,6 +319,9 @@ function num2letras($num, $fem = false, $dec = true) {
    //Zi hack --> return ucfirst($tex);
    $end_num=ucfirst($tex).'  '.$float[1].'/100';
    return $end_num; 
+}
+function fecha2Str($fecha){
+	return date("d - m - Y",strtotime($fecha));
 } 
 function mostrarI($datos){
 	global $pdf;

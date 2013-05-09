@@ -8,8 +8,8 @@ include_once("../../class/recepcion.php");
 ${$narchivo}=new $narchivo;
 $recepcion=new recepcion;
 $cod=$_GET['cod'];
-$fae=array_shift(${$narchivo}->mostrar($cod));
-$dat=array_shift($recepcion->mostrar($fae['codrecepcion']));
+$dis=array_shift(${$narchivo}->mostrar($cod));
+$dat=array_shift($recepcion->mostrar($dis['codrecepcion']));
 include_once '../../funciones/funciones.php';
 //include_once '../../class/direccion.php';
 include_once '../../class/institucion.php';
@@ -52,19 +52,24 @@ include_once '../../cabecerahtml.php';
 <fieldset>
 	<div class="titulo">Datos de Distribución</div>
  	<form action="actualizar.php" method="post">
-    <?php campos("","codfaeno","hidden",$cod)?>
+    <?php campos("","codrecepcion","hidden",$cod)?>
    	<table class="tablareg">
     	<tr>
-        	<td><?php campos("Nro Orden Derribe","ordenderribe","text",$fae["ordenderribe"],1,array("required"=>"required","size"=>30))?></td>
-            <td><?php campos("Cantidad Reses","cantidadreses","number",$fae['cantidadreses'],0,array("required"=>"required","size"=>30,"max"=>$dat['cantidadreses'],"min"=>"0"));?></td>
+        	<td><?php campos("Tipo de Vehiculo","tipovehiculo","text",$dis["tipovehiculo"],1,array("required"=>"required","size"=>30))?></td>
+            <td><?php campos("Nro Placa","numeroplaca","text",$dis["numeroplaca"],0,array("required"=>"required","size"=>30))?></td>
         </tr>
         <tr>
-        	<td><?php campos("Fecha Faeno","fecharegistro","date",$fae['fecharegistro'],0,array("size"=>30,"max"=>date("Y-m-d")));?></td>
+        	<td><?php campos("Fecha Distribución","fechadistribucion","date",$dis["fechadistribucion"],0,array("size"=>30,"max"=>date("Y-m-d")));?></td>
+            <td><?php campos("Nombre Responsable","nombreresponsable","text",$dis["nombreresponsable"],0,array("required"=>"required","size"=>30))?></td>
         </tr>
         <tr>
-                <td colspan="2"><?php campos("Observaciones","observaciones","textarea",$fae['observaciones'],0,array("rows"=>5,"cols"=>50,"size"=>30));?></td>
+        	<td><?php campos("Destino","destino","text",$dis["destino"],0,array("required"=>"required","size"=>30))?></td>
+            <td><?php campos("Expedido en:","expedido","text",$dis["expedido"],0,array("required"=>"required","size"=>30))?></td>
         </tr>
-		<tr><td><?php campos("Guardar Faeno","guardar","submit");?></td><td></td></tr> 
+        <tr>
+                <td colspan="2"><?php campos("Observaciones","observaciones","textarea",$dis["observaciones"],0,array("rows"=>5,"cols"=>50,"size"=>30));?></td>
+        </tr>
+		<tr><td><?php campos("Guardar Distribución","guardar","submit");?></td><td></td></tr> 
     </table>
     </form>   
 </fieldset>
