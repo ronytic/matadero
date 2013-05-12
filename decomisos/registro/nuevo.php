@@ -54,6 +54,9 @@ include_once '../../cabecerahtml.php';
     	<tr>
         	<td><?php campos("Fecha de Decomiso","fechadecomiso","date",date("Y-m-d"),0,array("size"=>30,"max"=>date("Y-m-d")));?></td>
         </tr>
+        <tr>
+        	<td><?php campos("Doctor Responsable","doctor","text","",0,array("required"=>"required","size"=>30))?></td>
+        </tr>
         <tr><td colspan="2"><?php campos("Decomisos Antemortem","decomisosantemortem","textarea","",0,array("rows"=>5,"cols"=>50,"size"=>30));?></td></tr>
         <tr><td colspan="2"><?php campos("Decomisos Postmortem","decomisospostmortem","textarea","",0,array("rows"=>5,"cols"=>50,"size"=>30));?></td></tr>
         <tr>

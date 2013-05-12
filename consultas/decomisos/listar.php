@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-$titulo="Consulta de Recepciones de GANADO";
+$titulo="Consulta de Decomisos de Ganado";
 $folder="../../";
 include_once("../../funciones/funciones.php");
 include_once '../../class/institucion.php';
@@ -31,8 +31,8 @@ include_once "../../cabecerahtml.php";
                         <td><?php //campos("Nombre Usuario","nombreusuario","select",$rec,1);?>
                         	<?php campos("Nombre Usuario","nombreusuario","text","",1);?>
                         </td>
-                        <td><?php campos("Fecha Internación Inicio","fechainternacioninicio","date",date("Y-m-d"));?></td>
-                        <td><?php campos("Fecha Internación Final","fechainternacionfinal","date",date("Y-m-d"),0,array("max"=>date("Y-m-d")));?></td>
+                        <td><?php campos("Fecha Faeno Inicio","fechainternacioninicio","date",date("Y-m-d"));?></td>
+                        <td><?php campos("Fecha Faeno Final","fechainternacionfinal","date",date("Y-m-d"),0,array("max"=>date("Y-m-d")));?></td>
                     </tr>
                     <tr>
                         <td><?php campos("Buscar","enviar","submit","");?></td>

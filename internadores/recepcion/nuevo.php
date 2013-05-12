@@ -18,23 +18,23 @@ $inst=todolista($institucion->mostrarTodo(),"codinstitucion","color,nombreinstit
         <form action="guardar.php" method="post">
         <table class="tablareg">
             <tr>
-                <td colspan="2"><?php campos("Nombre Usuario","nombreusuario","text","",1,array("required"=>"required","size"=>50));?></td>
+                <td colspan="2"><?php campos("Nombre Usuario","nombreusuario","text","",1,array("required"=>"required","size"=>50,"class"=>"an"));?></td>
                 
             </tr>
             <tr>
-            	<td><?php campos("Marca","marca","text","",0,array("required"=>"required","size"=>30));?></td>
+            	<td><?php campos("Marca","marca","text","",0,array("required"=>"required","size"=>30,"class"=>"an"));?></td>
                 <td colspan="2"><?php campos("Institución","codinstitucion","select",$inst);?></td>
             </tr>
             <tr>
-                <td><?php campos("Cantidad Reses","cantidadreses","number","",0,array("required"=>"required","size"=>30,"min"=>0));?></td>
-                <td><?php campos("Placa","placa","text","",0,array("required"=>"required","size"=>30));?></td>
+                <td><?php campos("Cantidad Reses","cantidadreses","number","",0,array("required"=>"required","size"=>30,"min"=>0,"class"=>"n"));?></td>
+                <td><?php campos("Placa","placa","text","",0,array("required"=>"required","size"=>30,"class"=>"an"));?></td>
             </tr>
             <tr>
-                <td><?php campos("Procedencia","procedencia","text","",0,array("size"=>30));?></td>
-                <td><?php campos("Fecha Registro","fecharegistro","date","",0,array("size"=>30));?></td>
+                <td><?php campos("Procedencia","procedencia","text","",0,array("size"=>30,"class"=>"an"));?></td>
+                <td><?php campos("Fecha Registro","fecharegistro","date","",0,array("size"=>30,"class"=>"n"));?></td>
             </tr>
             <tr>
-                <td colspan="2"><?php campos("Observaciones","observaciones","textarea","","",array("rows"=>5,"cols"=>50,"size"=>30));?></td>
+                <td colspan="2"><?php campos("Observaciones","observaciones","textarea","","",array("rows"=>5,"cols"=>50,"size"=>30,"class"=>"an"));?></td>
             </tr>
             <tr><td><?php campos("Guardar Recepción","guardar","submit");?></td><td></td></tr>
         </table>

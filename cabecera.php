@@ -6,7 +6,7 @@
 	</div>
 	<div class="grid_10">
     	<div class="titulo1">
-    	SISTEMA DE GESTIÓN DE MATADEROS <br> ACHACHICALA
+    	SISTEMA DE INFORMACIÓN MATADERO MUNICIPAL - ACHACHICALA
         </div>
         <div class="botones">
         	<span class="pequenol">Nombre:</span> <?php echo $uslogin['nombre'];?> | 

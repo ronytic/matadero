@@ -21,7 +21,7 @@ include_once '../cabecerahtml.php';
 					</tr>
                     <tr>
 						<td><?php campos("Email","email","text","",0,array("size"=>30));?></td>
-						<td><?php campos("Nivel","nivel","select",array("2"=>"Administrador","3"=>"Secretaria","4"=>"Tecnico","5"=>"Portero-Guardia"));?></td>
+						<td><?php campos("Nivel","nivel","select",array("2"=>"Administrador","3"=>"Secretaria","4"=>"Tecnico Operario","5"=>"Portero-Guardia"));?></td>
 					</tr>
 					<tr>
 						<td colspan="2"><?php campos("Observación","observacion","textarea","","",array("rows"=>5,"cols"=>50,"size"=>30));?></td>

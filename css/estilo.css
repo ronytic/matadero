@@ -1,7 +1,8 @@
 body{
 	background-color:#B8DBF1;	/*B8DBF1,D98825,DE2E17,D1CF9E,EDFF89*/
-	/*background-image:url(../imagenes/body.jpg);
-	color:#333333;*/
+	
+	background: #f1f1f1;
+	color:#333333;
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 13px;
 	line-height: 1.4em; 
@@ -10,6 +11,7 @@ body{
 }
 #contenedor{
 	background-color: #000;
+	box-shadow:#000 0px 1px 10px;
 }
 /* Curva de Texto */
 .corner-tl { -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; }
@@ -23,6 +25,7 @@ body{
 .corner-all,.corner-all td{ -moz-border-radius: 5px; -webkit-border-radius: 5px; -msie-border-radius: 5px;}
 
 #cabecera{
+	box-shadow:#000 3px 0px 10px;
 	position:relative;
 	-moz-border-radius: 5px; -webkit-border-radius: 5px; -msie-border-radius: 5px;
 	border:# 2px double;
@@ -73,10 +76,10 @@ background : -linear-gradient(top, rgb(209, 50, 50) 00%, rgb(115, 6, 6) 99%);
 	font:13px/1.5 'Helvetica Neue',Arial,'Liberation Sans',FreeSans,sans-serif;
 	padding:10px;
 	background-color: #FFF;
-	
+	box-shadow:#000 3px 0px 10px;
 }
 #pie{
-
+	box-shadow:#000 3px 0px 10px;
 	font-size:13px;
 	padding: 10px;
 	text-align:center;	

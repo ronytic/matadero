@@ -9,6 +9,7 @@ class submenu extends bd{
 			case 2:{return $this->getRecords("administrador=1 and codmenu=$menu and activo=1","orden");}break;
 			case 3:{return $this->getRecords("secretaria=1 and codmenu=$menu and activo=1","orden");}break;
 			case 4:{return $this->getRecords("tecnico=1 and codmenu=$menu and activo=1","orden");}break;
+			case 5:{return $this->getRecords("portero=1 and codmenu=$menu and activo=1","orden");}break;
 			
 		}
 	}

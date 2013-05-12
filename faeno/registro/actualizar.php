@@ -8,6 +8,8 @@ extract($_POST);
 $valores=array(			///"codrecepcion"=>"'$codrecepcion'",
 			"ordenderribe"=>"'$ordenderribe'",
 			"cantidadreses"=>"'$cantidadreses'",
+			"responsable"=>"'$responsable'",
+			"matarife"=>"'$matarife'",
 			"fecharegistro"=>"'$fecharegistro'",
 			"observaciones"=>"'$observaciones'",
 			);

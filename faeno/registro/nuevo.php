@@ -56,6 +56,10 @@ include_once '../../cabecerahtml.php';
             <td><?php campos("Cantidad Reses","cantidadreses","number",$dat['cantidadreses'],0,array("required"=>"required","size"=>30,"max"=>$dat['cantidadreses'],"min"=>"0"));?></td>
         </tr>
         <tr>
+        	<td><?php campos("Reponsable de Faeno","responsable","text","",0,array("required"=>"required","size"=>30))?></td>
+            <td><?php campos("Matarife","matarife","text","",0,array("required"=>"required","size"=>30))?></td>
+        </tr>
+        <tr>
         	<td><?php campos("Fecha Faeno","fecharegistro","date",date("Y-m-d"),0,array("size"=>30,"max"=>date("Y-m-d")));?></td>
         </tr>
         <tr>

@@ -12,13 +12,13 @@ include_once '../../cabecerahtml.php';
                 <form action="guardar.php" method="post">
 				<table class="tablareg">
 					<tr>
-						<td><?php campos("Nombre Institución","nombreinstitucion","text","",1,array("required"=>"required","size"=>30));?></td>
+						<td><?php campos("Nombre Institución","nombreinstitucion","text","",1,array("required"=>"required","size"=>30,"class"=>"an"));?></td>
 					</tr>
                     <tr>
-						<td><?php campos("Color","color","text","",0,array("required"=>"required","size"=>30));?></td>
+						<td><?php campos("Color","color","text","",0,array("required"=>"required","size"=>30,"class"=>"an"));?></td>
 					</tr>
 					<tr>
-						<td><?php campos("Observaciones","observacion","textarea","","",array("rows"=>"10","cols"=>30));?></td>
+						<td><?php campos("Observaciones","observacion","textarea","","",array("rows"=>"10","cols"=>30,"class"=>"an n"));?></td>
 					</tr>
 					<tr><td><?php campos("Guardar Institución","guardar","submit");?></td><td></td></tr>
 				</table>

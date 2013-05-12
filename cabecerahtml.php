@@ -25,3 +25,11 @@ $uslogin=array_shift($usuarios->mostrar($codusuario));
 <script language="javascript" type="text/javascript" src="<?php echo $folder;?>js/jquery.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo $folder;?>js/jquery.form.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo $folder;?>js/busquedas/busquedas.js"></script>
+<script language="javascript" type="text/javascript" src="<?php echo $folder;?>js/jquery.alphanumeric.pack.js"></script>
+<script language="javascript">
+$(document).on("ready",inicio);
+function inicio(){
+	$('.an').alphanumeric();	
+	$('.n').numeric();
+}
+</script>

@@ -320,6 +320,31 @@ function num2letras($num, $fem = false, $dec = true) {
    $end_num=ucfirst($tex).'  '.$float[1].'/100';
    return $end_num; 
 }
+function recortarTexto($texto, $limite=100){   
+    $texto = trim($texto);
+    $texto = strip_tags($texto);
+    $tamano = strlen($texto);
+    $resultado = '';
+    if($tamano <= $limite){
+        return $texto;
+    }else{
+        $texto = substr($texto, 0, $limite);
+        $palabras = explode(' ', $texto);
+        $resultado = implode(' ', $palabras);
+        $resultado .= '...';
+    }   
+    return $resultado;
+}
+function subirarchivo($archivo,$directorio,$tipo="documento",$peso="500000000"){
+		if(($archivo['type']=="application/pdf" || $archivo['type']=="application/msword" || $archivo['type']=="application/vnd.openxmlformats-officedocument.wordprocessingml.document") && $_FILES['archivodigital']['size']<=$peso){
+			@$archivodigital=str_replace(array("ñ","Ñ","á","é","í","ó","ú","Á","É","Í","Ó","Ú","ä","ë","ï","ö","ü","Ä","Ë","Ï","Ö","Ü"),array("n","N","a","e","i","o","u","A","E","I","O","U","a","e","i","o","u","A","E","I","O","U"), $archivo['name']);
+			
+			@copy($archivo['tmp_name'],$directorio.$archivodigital);
+			return $archivodigital;
+		}else{
+			return false;
+		}	
+	}
 function fecha2Str($fecha){
 	return date("d - m - Y",strtotime($fecha));
 } 

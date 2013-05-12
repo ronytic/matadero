@@ -7,6 +7,7 @@ ${$narchivo}=new $narchivo;
 extract($_POST);
 $valores=array(			"codrecepcion"=>"'$codrecepcion'",
 			"fechadecomiso"=>"'$fechadecomiso'",
+			"doctor"=>"'$doctor'",
 			"decomisosantemortem"=>"'$decomisosantemortem'",
 			"decomisospostmortem"=>"'$decomisospostmortem'",
 			"observaciones"=>"'$observaciones'",

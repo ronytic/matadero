@@ -1,4 +1,5 @@
 <?php
+ob_end_clean();
 include_once("../fpdf/fpdf.php");
 $narchivo="usuarios";
 include_once("../class/".$narchivo.".php");

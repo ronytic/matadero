@@ -20,7 +20,7 @@ include_once("../funciones/funciones.php");
 <div class="container_12">
     <div class="prefix_4 grid_4 suffix_4">
 		<div id="formLogin" class="corner-all cabecera">
-        	<div class="titulo4">Sistema de Gestión de Mataderos<br /> "ACHACHICALA"</div>
+        	<div class="titulo4">Sistema de Información de Mataderos<br /> "ACHACHICALA"</div>
         	<img src="../imagenes/logo.png" />
             <br />
             <div class="cuerpo">
