@@ -29,7 +29,7 @@ $uslogin=array_shift($usuarios->mostrar($codusuario));
 <script language="javascript">
 $(document).on("ready",inicio);
 function inicio(){
-	$('.an').alphanumeric();	
+	$('.an').alphanumeric({'allow':' '});	
 	$('.n').numeric();
 }
 </script>
