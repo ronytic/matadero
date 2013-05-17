@@ -13,7 +13,7 @@ extract($_GET);
 
 $fa=array_shift($faeno->mostrar($cod));
 	
-$dato=array_shift(${$narchivo}->mostrar($fa['codfaeno']));
+$dato=array_shift(${$narchivo}->mostrar($fa['codrecepcion']));
 //$dir=array_shift($direccion->mostrar($dato['coddireccion']));
 $inst=array_shift($institucion->mostrar($dato['codinstitucion']));
 include_once("../../config.php");
@@ -64,7 +64,7 @@ mostrarI(array("Orden de Derribe"=>$fa['ordenderribe'],
 				"Observaciones"=>""
 			));
 
-$pdf->MultiCell(190,5,$fa['observaciones']);	
+$pdf->MultiCell(190,5,utf8_decode($fa['observaciones']));	
 		
 $pdf->Output();
 ?>

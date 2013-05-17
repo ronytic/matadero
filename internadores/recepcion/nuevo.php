@@ -31,7 +31,7 @@ $inst=todolista($institucion->mostrarTodo(),"codinstitucion","color,nombreinstit
             </tr>
             <tr>
                 <td><?php campos("Procedencia","procedencia","text","",0,array("size"=>30,"class"=>"an"));?></td>
-                <td><?php campos("Fecha Registro","fecharegistro","date","",0,array("size"=>30,"class"=>"n"));?></td>
+                <td><?php campos("Fecha Registro","fecharegistro","date",date("Y-m-d"),0,array("size"=>30,"class"=>"n","required"=>"required"));?></td>
             </tr>
             <tr>
                 <td colspan="2"><?php campos("Observaciones","observaciones","textarea","","",array("rows"=>5,"cols"=>50,"size"=>30,"class"=>"an"));?></td>

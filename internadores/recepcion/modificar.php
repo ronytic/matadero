@@ -38,7 +38,7 @@ include_once '../../cabecerahtml.php';
             </tr>
             <tr>
                 <td><?php campos("Procedencia","procedencia","text",$dat['procedencia'],0,array("size"=>30));?></td>
-                <td><?php campos("Fecha Registro","fecharegistro","date",$dat['fecharegistro'],0,array("size"=>30));?></td>
+                <td><?php campos("Fecha Registro","fecharegistro","date",$dat['fecharegistro'],0,array("size"=>30,"required"=>"required"));?></td>
             </tr>
             <tr>
                 <td colspan="2"><?php campos("Observaciones","observaciones","textarea",$dat['observaciones'],"",array("rows"=>5,"cols"=>50,"size"=>30));?></td>

@@ -52,7 +52,7 @@ mostrarI(array("Nombres Usuario"=>$dato['nombreusuario'],
 				"Procedencia"=>$dato['procedencia'],
 				"Observaciones"=>"",
 			));
-$pdf->MultiCell(190,5,$dato['observaciones']);	
+$pdf->MultiCell(190,5,utf8_decode($dato['observaciones']));	
 $pdf->Ln(5);$pdf->Ln(5);
 $pdf->Cell(190,0,"",1,10,"C");
 mostrarI(array("Fecha de Decomiso"=>$dec['fechadecomiso'],
