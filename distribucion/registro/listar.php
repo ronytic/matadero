@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-$titulo="Listado de Faenos";
+$titulo="Listado de Distribuciones";
 $folder="../../";
 include_once("../../funciones/funciones.php");
 include_once '../../class/institucion.php';

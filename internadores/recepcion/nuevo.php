@@ -1,7 +1,7 @@
 <?php
 include_once '../../login/check.php';
 $folder="../../";
-$titulo="Nuevo Recepción - Internación";
+$titulo="Nueva Recepción - Internación";
 include_once '../../funciones/funciones.php';
 include_once '../../cabecerahtml.php';
 //include_once '../../class/direccion.php';
