@@ -13,7 +13,7 @@ extract($_GET);
 
 $dec=array_shift($decomisos->mostrar($cod));
 	
-$dato=array_shift(${$narchivo}->mostrar($dec['coddecomisos']));
+$dato=array_shift(${$narchivo}->mostrar($dec['codrecepcion']));
 //$dir=array_shift($direccion->mostrar($dato['coddireccion']));
 $inst=array_shift($institucion->mostrar($dato['codinstitucion']));
 include_once("../../config.php");
@@ -60,10 +60,10 @@ mostrarI(array("Fecha de Decomiso"=>$dec['fechadecomiso'],
 				"Decomisos AnteMorten:"=>""
 			));
 
-$pdf->MultiCell(190,5,$dec['decomisosantemortem']);
+$pdf->MultiCell(190,5,utf8_decode($dec['decomisosantemortem']));
 mostrarI(array("Decomisos PostMorten:"=>""));	
-$pdf->MultiCell(190,5,$dec['decomisospostmortem']);	
+$pdf->MultiCell(190,5,utf8_decode($dec['decomisospostmortem']));	
 mostrarI(array("Observaciones:"=>""));	
-$pdf->MultiCell(190,5,$dec['observaciones']);	
+$pdf->MultiCell(190,5,utf8_decode($dec['observaciones']));	
 $pdf->Output();
 ?>
