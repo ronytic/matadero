@@ -17,8 +17,11 @@ include_once "../../cabecerahtml.php";
         	<div class="titulo"><?php echo $titulo;?> - Criterio de Busqueda</div>
             <form id="busqueda" action="busqueda.php" method="post" >
                 <table class="tablabus">
+                	<tr>
+                    	 <td><?php campos("Código de Barra","codigo","password","",1);?></td>
+                    </tr>
                     <tr>
-                        <td><?php campos("Nombre Usuario","nombreusuario","text","",1);?></td>
+                        <td><?php campos("Nombre Usuario","nombreusuario","text","",0);?></td>
 						<td><?php campos("Institución","codinstitucion","select",$inst);?></td>
                         <td><?php campos("Marca","marca","text","");?></td>
                         <td><?php campos("Fecha Registro","fecharegistro","date","");?></td>

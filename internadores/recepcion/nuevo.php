@@ -10,6 +10,7 @@ include_once '../../class/institucion.php';
 $institucion=new institucion;
 //$dir=todolista($direccion->mostrarTodo(),"coddireccion","ciudad,zona,calle","-");
 $inst=todolista($institucion->mostrarTodo(),"codinstitucion","color,nombreinstitucion"," - ");
+$tamano=array("Grande"=>"Grande","Mediano"=>"Mediano","Pequeño"=>"Pequeño");
 ?>
 <?php include_once '../../cabecera.php';?>
 <div class="prefix_3 grid_4 suffix_3">
@@ -24,6 +25,9 @@ $inst=todolista($institucion->mostrarTodo(),"codinstitucion","color,nombreinstit
             <tr>
             	<td><?php campos("Marca","marca","text","",0,array("required"=>"required","size"=>30,"class"=>"an"));?></td>
                 <td colspan="2"><?php campos("Institución","codinstitucion","select",$inst);?></td>
+            </tr>
+            <tr>
+            	<td colspan="2"><?php campos("Tamaño de Res","tamano","select",$tamano);?></td>
             </tr>
             <tr>
                 <td><?php campos("Cantidad Reses","cantidadreses","number","",0,array("required"=>"required","size"=>30,"min"=>0,"class"=>"n"));?></td>

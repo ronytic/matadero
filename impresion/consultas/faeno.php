@@ -7,6 +7,7 @@ class PDF extends FPDF{
 		global $lema;
 		$this->SetFont("arial","B",12);
 		$this->Image("../../imagenes/logo.png",10,10,30,30);
+		$this->Image("../../imagenes/logo2.jpg",$this->w-40,5,30,40);
 		$this->SetXY(50,15);
 		$this->Cell(150,10,utf8_decode(utf8_decode($lema)),0,5,"C");
 		$this->SetFont("arial","UB",12);
@@ -25,10 +26,15 @@ class PDF extends FPDF{
 		$this->Ln(5);	
 	}	
 	function Footer(){
+				include_once("../../class/usuarios.php");
+		$usuarios=new usuarios;
+		$usu=$usuarios->mostrarTodo("codusuarios=".$_SESSION['idusuario']);
+		$usu=array_shift($usu);
 		$this->SetY(-15);
 		$this->Cell(255,0,"",1,10,"C");
 		$this->SetFont("arial","I",10);
-		$this->Cell(255,5,"Reporte Generado: ".date("d-m-Y H:i:s"),0,0,"C");	
+		$this->Cell(155,5,"Reporte Generado: ".date("d-m-Y H:i:s"),0,0,"L");	
+		$this->Cell(100,5,"Responsable: ".$usu['usuario'],0,0,"L");	
 	}
 }
 extract($_GET);

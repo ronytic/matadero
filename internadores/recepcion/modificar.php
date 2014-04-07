@@ -15,6 +15,7 @@ $institucion=new institucion;
 //$dir=todolista($direccion->mostrarTodo(),"coddireccion","ciudad,zona,calle","-");
 $inst=todolista($institucion->mostrarTodo(),"codinstitucion","color,nombreinstitucion"," - ");
 
+$tamano=array("Grande"=>"Grande","Mediano"=>"Mediano","Pequeño"=>"Pequeño");
 
 include_once '../../cabecerahtml.php';
 ?>
@@ -31,6 +32,9 @@ include_once '../../cabecerahtml.php';
             <tr>
             	<td><?php campos("Marca","marca","text",$dat['marca'],0,array("required"=>"required","size"=>30));?></td>
                 <td colspan="2"><?php campos("Institución","codinstitucion","select",$inst,0,"",$dat['codinstitucion']);?></td>
+            </tr>
+            <tr>
+            	<td colspan="2"><?php campos("Tamaño de Res","tamano","select",$tamano);?></td>
             </tr>
             <tr>
                 <td><?php campos("Cantidad Reses","cantidadreses","number",$dat['cantidadreses'],0,array("required"=>"required","size"=>30,"min"=>0));?></td>
