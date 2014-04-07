@@ -23,7 +23,7 @@ $(document).ready(function(e){
 	});
 	function resultado(data){
 		$("#respuesta").html(data);
-		$('html, body').animate({scrollTop:800}, 'slow');
+		//$('html, body').animate({scrollTop:800}, 'slow');
 		$(this).find("input").focus();
 	}
 });
