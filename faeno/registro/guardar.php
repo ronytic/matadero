@@ -4,7 +4,13 @@ if(!empty($_POST)):
 $narchivo="faeno";
 include_once("../../class/".$narchivo.".php");
 ${$narchivo}=new $narchivo;
+
+include_once("../../class/recepcion.php");
+$recepcion=new recepcion;
 extract($_POST);
+$cantidadnueva=$cantidadresesanterior-$cantidadreses;
+//echo $cantidadnueva;
+$recepcion->actualizar(array("cantidadresesxfaenear"=>$cantidadnueva),$codrecepcion);
 $valores=array(			"codrecepcion"=>"'$codrecepcion'",
 			"ordenderribe"=>"'$ordenderribe'",
 			"cantidadreses"=>"'$cantidadreses'",

@@ -32,8 +32,11 @@ include_once '../../cabecerahtml.php';
                 <td colspan="2"><?php campos("Institución","codinstitucion","select",$inst,0,array("readonly"=>"readonly","disabled"=>"disabled"),$dat['codinstitucion']);?></td>
             </tr>
             <tr>
-                <td><?php campos("Cantidad Reses Internados","cantidadreses","number",$dat['cantidadreses'],0,array("required"=>"required","size"=>30,"readonly"=>"readonly"));?></td>
-                <td><?php campos("Placa","placa","text",$dat['placa'],0,array("required"=>"required","size"=>30,"readonly"=>"readonly"));?></td>
+                <td><?php campos("Cantidad de Reses Internados","cantidadreses","number",$dat['cantidadreses'],0,array("required"=>"required","size"=>30,"readonly"=>"readonly"));?></td>
+               <td><?php campos("Cantidad de Reses Internados por Faenear","cantidadreses","number",$dat['cantidadresesxfaenear'],0,array("required"=>"required","size"=>30,"readonly"=>"readonly"));?></td>
+            </tr>
+            <tr>
+            	 <td><?php campos("Placa","placa","text",$dat['placa'],0,array("required"=>"required","size"=>30,"readonly"=>"readonly"));?></td>
             </tr>
             <tr>
                 <td><?php campos("Procedencia","procedencia","text",$dat['procedencia'],0,array("size"=>30,"readonly"=>"readonly"));?></td>
@@ -50,10 +53,16 @@ include_once '../../cabecerahtml.php';
 	<div class="titulo">Datos de Faeno</div>
  	<form action="guardar.php" method="post">
     <?php campos("","codrecepcion","hidden",$id)?>
+    <?php campos("","cantidadresesanterior","hidden",$dat['cantidadresesxfaenear'])?>
    	<table class="tablareg">
     	<tr>
         	<td><?php campos("Nro Orden Derribe","ordenderribe","text","",1,array("required"=>"required","size"=>30))?></td>
-            <td><?php campos("Cantidad Reses","cantidadreses","number",$dat['cantidadreses'],0,array("required"=>"required","size"=>30,"max"=>$dat['cantidadreses'],"min"=>"0"));?></td>
+            <td><?php campos("Cantidad de Reses","cantidadreses","number",$dat['cantidadresesxfaenear'],0,array("required"=>"required","size"=>30,"max"=>$dat['cantidadreses'],"min"=>"1","max"=>$dat['cantidadresesxfaenear']));?>
+            </td>
+        </tr>
+        <tr>
+        	<td></td>
+            <td> <div class="rojoC">Tenga Cuidado en introducir la Cantidad Faeneada, posteriormente no podra ser modificadad</div></td>
         </tr>
         <tr>
         	<td><?php campos("Reponsable de Faeno","responsable","text","",0,array("required"=>"required","size"=>30))?></td>

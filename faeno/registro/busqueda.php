@@ -14,8 +14,8 @@ if (!empty($_POST)) {
 	}else{
 		$codigo="";
 	}
-echo $codigo;
-	$recep=${$narchivo}->mostrarTodo("nombreusuario LIKE '%$nombreusuario%' and marca LIKE '%$marca%' and codinstitucion LIKE '%$codinstitucion%'");
+	//echo $codigo;
+	$recep=${$narchivo}->mostrarTodo("nombreusuario LIKE '%$nombreusuario%' and marca LIKE '%$marca%' and codinstitucion LIKE '%$codinstitucion%'","nombreusuario");
 //	$datos=${$narchivo}->mostrarTodoUnion("cliente c,categoria cat,direccion dir","c.*,cat.*,dir.*","c.paterno","c.nombres LIKE '%$nombres%' and c.paterno LIKE '%$paterno%' and c.materno LIKE '%$materno%' and c.ci LIKE '%$ci%' and c.coddireccion LIKE '%$coddireccion%' and c.codcategoria LIKE '%$codcategoria%' and c.codcategoria=cat.codcategoria and dir.coddireccion=c.coddireccion","c.");
 
  
@@ -27,9 +27,10 @@ echo $codigo;
 		$datos[$i]['nombreusuario']=$r['nombreusuario'];
 		$datos[$i]['ordenderribe']=$fa['ordenderribe'];
 		$datos[$i]['cantidadreses']=$fa['cantidadreses'];
+		$datos[$i]['cantidadresesxfaenear']=$fa['cantidadresesxfaenear'];
 		$datos[$i]['fecharegistro']=$fa['fecharegistro'];
 	}
-	$titulo=array("nombreusuario"=>"Nombre Usuario","ordenderribe"=>"Orden Derribe","cantidadreses"=>"Cantidad Redes","fecharegistro"=>"Fecha de Faeno");
-	listadoTabla($titulo,$datos,1,"modificar.php","eliminar.php","ver.php",array("Ver Código de Barra"=>"codigo.php"));
+	$titulo=array("nombreusuario"=>"Nombre Usuario","ordenderribe"=>"Orden Derribe","cantidadreses"=>"Cantidad Reses","fecharegistro"=>"Fecha de Faeno");
+	listadoTabla($titulo,$datos,1,"modificar.php","eliminar.php","ver.php",array("Ver Código de Barra"=>"codigo.php"),"","_blank");
 }
 ?>

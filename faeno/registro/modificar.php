@@ -56,7 +56,11 @@ include_once '../../cabecerahtml.php';
    	<table class="tablareg">
     	<tr>
         	<td><?php campos("Nro Orden Derribe","ordenderribe","text",$fae["ordenderribe"],1,array("required"=>"required","size"=>30))?></td>
-            <td><?php campos("Cantidad Reses","cantidadreses","number",$fae['cantidadreses'],0,array("required"=>"required","size"=>30,"max"=>$dat['cantidadreses'],"min"=>"0"));?></td>
+            <td><?php campos("Cantidad de Reses","cantidadreses","number",$fae['cantidadreses'],0,array("required"=>"required","size"=>30,"max"=>$dat['cantidadreses'],"min"=>"0","readonly"=>"readonly"));?></td>
+        </tr>
+        <tr>
+        	<td></td>
+            <td><div class="rojoC">Por Cuestión de seguridad no se permite modificar la cantidad de reses faeneadas</div></td>
         </tr>
         <tr>
         	<td><?php campos("Reponsable de Faeno","responsable","text",$fae['responsable'],0,array("required"=>"required","size"=>30))?></td>
