@@ -7,7 +7,7 @@ include_once '../../class/institucion.php';
 //include_once '../../class/categoria.php';
 $institucion=new institucion;
 //$categoria=new categoria;
-$inst=todolista($institucion->mostrarTodo(),"codinstitucion","color,nombreinstitucion"," - ");
+$inst=todolista($institucion->mostrarTodo("","nombreinstitucion"),"codinstitucion","color,nombreinstitucion"," - ");
 //$cat=todolista($categoria->mostrarTodo(),"codcategoria","nombre,detalle","-");
 include_once "../../cabecerahtml.php";
 ?>

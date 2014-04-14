@@ -37,7 +37,11 @@ include_once '../../cabecerahtml.php';
             	<td colspan="2"><?php campos("Tamaño de Res","tamano","select",$tamano);?></td>
             </tr>
             <tr>
-                <td><?php campos("Cantidad Reses","cantidadreses","number",$dat['cantidadreses'],0,array("required"=>"required","size"=>30,"min"=>0));?></td>
+                <td><?php campos("Cantidad de Reses","cantidadreses","number",$dat['cantidadreses'],0,array("required"=>"required","size"=>30,"min"=>1,"readonly"=>"readonly"));?>
+                <br>
+                <div class="rojoC">Por Seguridad no se puede modificar la cantidad de reses internadas</div>
+                
+                </td>
                 <td><?php campos("Placa","placa","text",$dat['placa'],0,array("required"=>"required","size"=>30));?></td>
             </tr>
             <tr>

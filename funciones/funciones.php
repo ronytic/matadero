@@ -33,7 +33,7 @@ function listadotabla($titulo,$datos,$enlaces=0,$modifica="",$elimina="",$ver=""
 			$id=array_shift($d);
 			if(!empty($ver)){
 			?>
-				<td><a href="<?php echo $ver;?>?cod=<?php echo $id;?>" class="boton ver"><img src="<?php echo $folder; ?>imagenes/iconos/ver.png" alt="Ver" title="Ver"></a></td>
+				<td><a href="<?php echo $ver;?>?cod=<?php echo $id;?>" class="boton ver" target="_blank"><img src="<?php echo $folder; ?>imagenes/iconos/ver.png" alt="Ver" title="Ver"></a></td>
 			<?php
 			}
 			if(!empty($modifica)){
@@ -68,10 +68,11 @@ function todolista($datos,$k,$v,$separador=" "){
 //	print_r($datos);
 	$data=array();
 	foreach($datos as $d){
-		$valor="";
+		$valor=array();
 		foreach(explode(",",$v) as $val){
-			$valor.=$d[$val]." ".$separador." ";	
+			array_push($valor,$d[$val]);
 		}
+		$valor=implode(" ".$separador." ",$valor);
 		$data[$d[$k]]=$valor;
 	}
 	return $data;

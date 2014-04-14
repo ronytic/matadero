@@ -30,8 +30,16 @@ $tamano=array("Grande"=>"Grande","Mediano"=>"Mediano","Pequeño"=>"Pequeño");
             	<td colspan="2"><?php campos("Tamaño de Res","tamano","select",$tamano);?></td>
             </tr>
             <tr>
-                <td><?php campos("Cantidad Reses","cantidadreses","number","",0,array("required"=>"required","size"=>30,"min"=>0,"class"=>"n"));?></td>
-                <td><?php campos("Placa","placa","text","",0,array("required"=>"required","size"=>30,"class"=>"an"));?></td>
+                <td><?php campos("Cantidad de Reses","cantidadreses","number","1",0,array("required"=>"required","size"=>30,"min"=>1,"class"=>"n"));?>
+                </td>
+                <td rowspan="2"><?php campos("Placa","placa","text","",0,array("required"=>"required","size"=>30,"class"=>"an"));?></td>
+            </tr>
+            <tr>
+            	<td>
+                <div class="rojoC">
+                	Por Seguridad la cantidad de reses no podrá modificarse posteriormente, Revíselo con cuidado
+                </div>
+                </td>
             </tr>
             <tr>
                 <td><?php campos("Procedencia","procedencia","text","",0,array("size"=>30,"class"=>"an"));?></td>
