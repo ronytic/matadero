@@ -35,8 +35,8 @@ include_once "../../cabecerahtml.php";
                         	<?php campos("Nombre Usuario","nombreusuario","text","",1);?>
                         </td>
                         <td><?php campos("Institución","codinstitucion","select",$inst);?></td>
-                        <td><?php campos("Fecha Internación Inicio","fechainternacioninicio","date",date("Y-m-d"));?></td>
-                        <td><?php campos("Fecha Internación Final","fechainternacionfinal","date",date("Y-m-d"),0,array("max"=>date("Y-m-d")));?></td>
+                        <td><?php campos("Fecha de Faeno Inicio","fechainternacioninicio","date",date("Y-m-d"));?></td>
+                        <td><?php campos("Fecha de Faeno Final","fechainternacionfinal","date",date("Y-m-d"),0,array("max"=>date("Y-m-d")));?></td>
                     </tr>
                     <tr>
                         <td><?php campos("Buscar","enviar","submit","");?></td>
